@@ -37,7 +37,11 @@ metrics = [
     'paper_H_plus_A',
     'paper_H_plus_A_loc',
     'paper_03_H_plus_03_A',
-    'paper_03_H_plus_03_A_loc'
+    'paper_03_H_plus_03_A_loc',
+    'paper_diff_H_A',
+    'paper_diff_A_H',
+    'paper_diff_03_H_A',
+    'paper_diff_03_A_H'
 ]
 
 
@@ -169,6 +173,10 @@ def populate_unfinished_metrics(df: DataFrame):
     df['paper_H_plus_A_loc'] = df['paper_H_loc'] + df['paper_A_loc']
     df['paper_03_H_plus_03_A'] = df['paper_03_H'] + df['paper_03_A']
     df['paper_03_H_plus_03_A_loc'] = df['paper_03_H_loc'] + df['paper_03_A_loc']
+    df['paper_diff_H_A'] = df['paper_H'] - df['paper_A']
+    df['paper_diff_A_H'] = df['paper_A'] - df['paper_H']
+    df['paper_diff_03_H_A'] = df['paper_03_H'] - df['paper_03_A']
+    df['paper_diff_03_A_H'] = df['paper_03_A'] - df['paper_03_H']
 
 
 def print_result(df: DataFrame, profit_open_column, profit_close_column, udi_column):
