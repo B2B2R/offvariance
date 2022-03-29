@@ -4,14 +4,40 @@ from telebot import TeleBot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 metrics = [
-    'simple_expected_difference',
-    'simple_expected_difference_loc',
+    'simple_expected_difference_H_A',
+    'simple_expected_difference_H_A_loc',
     'simple_expected_total_value',
     'simple_expected_total_value_loc',
-    'expected_difference',
-    'expected_difference_loc',
+    'expected_difference_H_A',
+    'expected_difference_A_H',
+    'expected_difference_H_A_loc',
+    'expected_difference_A_H_loc',
     'expected_total',
     'expected_total_loc',
+    'expected_goal_03_H',
+    'expected_goal_03_A',
+    'expected_difference_03_H_A',
+    'expected_difference_03_A_H',
+    'expected_goal_03_H_loc',
+    'expected_goal_03_A_loc',
+    'expected_difference_03_H_A_loc',
+    'expected_difference_03_A_H_loc',
+    'sum_ufr_03',
+    'sum_ufr_03_loc',
+    'sum_ufr_classic',
+    'sum_ufr_classic_loc',
+    'paper_H',
+    'paper_A',
+    'paper_H_loc',
+    'paper_A_loc',
+    'paper_03_H',
+    'paper_03_A',
+    'paper_03_H_loc',
+    'paper_03_A_loc',
+    'paper_H_plus_A',
+    'paper_H_plus_A_loc',
+    'paper_03_H_plus_03_A',
+    'paper_03_H_plus_03_A_loc'
 ]
 
 
@@ -28,7 +54,7 @@ def filter_correct_games(df: DataFrame):
         (df.odds_open_win2 > 0) & (df.odds_close_win2 > 0) &
         (df.odds_open_tb25 > 0) & (df.odds_close_tb25 > 0) &
         (df.odds_open_tm25 > 0) & (df.odds_close_tm25 > 0)
-    ].copy()
+        ].copy()
 
 
 def filter_correct_unfinished_games(df: DataFrame):
@@ -38,7 +64,7 @@ def filter_correct_unfinished_games(df: DataFrame):
         (df.odds_open_win2 > 0) &
         (df.odds_open_tb25 > 0) &
         (df.odds_open_tm25 > 0)
-    ].copy()
+        ].copy()
 
 
 def populate_metrics(df: DataFrame):
@@ -63,14 +89,86 @@ def populate_unfinished_metrics(df: DataFrame):
     df['udi_win2'] = df.odds_open_win2 / df.odds_close_win2 - 1
     df['udi_tm25'] = df.odds_open_tm25 / df.odds_close_tm25 - 1
     df['udi_tb25'] = df.odds_open_tb25 / df.odds_close_tb25 - 1
-    df['simple_expected_difference'] = df.team1_all_classic_xg90 - df.team2_all_classic_xg90
-    df['simple_expected_difference_loc'] = df.team1_home_classic_xg90 - df.team2_away_classic_xg90
-    df['simple_expected_total_value'] = df.team1_all_classic_xg90 + df.team2_all_classic_xg90 + df.team1_all_classic_xga90 + df.team2_all_classic_xga90
-    df['simple_expected_total_value_loc'] = df.team1_home_classic_xg90 + df.team2_away_classic_xg90 + df.team1_home_classic_xga90 + df.team2_away_classic_xga90
-    df['expected_difference'] = df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index - df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index
-    df['expected_total'] = df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index + df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index
-    df['expected_difference_loc'] = df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index - df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index
-    df['expected_total_loc'] = df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index + df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index
+    df['simple_expected_difference_H_A'] = df.team1_all_classic_xg90 - df.team2_all_classic_xg90
+    df['simple_expected_difference_H_A_loc'] = df.team1_home_classic_xg90 - df.team2_away_classic_xg90
+    df['simple_expected_total_value'] = (
+            df.team1_all_classic_xg90 + df.team2_all_classic_xg90 +
+            df.team1_all_classic_xga90 + df.team2_all_classic_xga90)
+    df['simple_expected_total_value_loc'] = (
+            df.team1_home_classic_xg90 + df.team2_away_classic_xg90 +
+            df.team1_home_classic_xga90 + df.team2_away_classic_xga90)
+    df['expected_total'] = (
+            df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index +
+            df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index)
+    df['expected_total_loc'] = (
+            df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index +
+            df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index)
+    df['expected_difference_H_A'] = (
+            df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index -
+            df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index)
+    df['expected_difference_A_H'] = (
+            df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index -
+            df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index)
+    df['expected_difference_H_A_loc'] = (
+            df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index -
+            df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index)
+    df['expected_difference_A_H_loc'] = (
+            df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index -
+            df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index)
+    df['expected_goal_03_H'] = df['team1_all_xgpower-03_xg_xg90noindex'] * df['team2_all_xgpower-03_xg_xga90index']
+    df['expected_goal_03_A'] = df['team2_all_xgpower-03_xg_xg90noindex'] * df['team1_all_xgpower-03_xg_xga90index']
+    df['expected_difference_03_H_A'] = (
+            df['team1_all_xgpower-03_xg_xg90noindex'] * df['team2_all_xgpower-03_xg_xga90index'] -
+            df['team2_all_xgpower-03_xg_xg90noindex'] * df['team1_all_xgpower-03_xg_xga90index'])
+    df['expected_difference_03_A_H'] = (
+            df['team2_all_xgpower-03_xg_xg90noindex'] * df['team1_all_xgpower-03_xg_xga90index'] -
+            df['team1_all_xgpower-03_xg_xg90noindex'] * df['team2_all_xgpower-03_xg_xga90index'])
+    df['expected_goal_03_H_loc'] = df['team1_home_xgpower-03_xg_xg90noindex'] * df[
+        'team2_away_xgpower-03_xg_xga90index']
+    df['expected_goal_03_A_loc'] = df['team2_away_xgpower-03_xg_xg90noindex'] * df[
+        'team1_home_xgpower-03_xg_xga90index']
+    df['expected_difference_03_H_A_loc'] = (
+            df['team1_home_xgpower-03_xg_xg90noindex'] * df['team2_away_xgpower-03_xg_xga90index'] -
+            df['team2_away_xgpower-03_xg_xg90noindex'] * df['team1_home_xgpower-03_xg_xga90index'])
+    df['expected_difference_03_A_H_loc'] = (
+            df['team2_away_xgpower-03_xg_xg90noindex'] * df['team1_home_xgpower-03_xg_xga90index'] -
+            df['team1_home_xgpower-03_xg_xg90noindex'] * df['team2_away_xgpower-03_xg_xga90index'])
+    df['sum_ufr_03'] = (df['team1_all_xg90-03_xg_xg90'] * df['team1_all_xgpower-03_xg_xg90index'] +
+                        df['team2_all_xg90-03_xg_xg90'] * df['team2_all_xgpower-03_xg_xg90index'] +
+                        df['team1_all_xg90-03_xg_xga90'] * df['team1_all_xgpower-03_xg_xga90index'] +
+                        df['team2_all_xg90-03_xg_xga90'] * df['team2_all_xgpower-03_xg_xga90index'])
+    df['sum_ufr_03_loc'] = (df['team1_home_xg90-03_xg_xg90'] * df['team1_home_xgpower-03_xg_xg90index'] +
+                            df['team2_away_xg90-03_xg_xg90'] * df['team2_away_xgpower-03_xg_xg90index'] +
+                            df['team1_home_xg90-03_xg_xga90'] * df['team1_home_xgpower-03_xg_xga90index'] +
+                            df['team2_away_xg90-03_xg_xga90'] * df['team2_away_xgpower-03_xg_xga90index'])
+    df['sum_ufr_classic'] = (df.team1_all_classic_xg90 * df.team1_all_xgpower_xg_xg90index +
+                             df.team2_all_classic_xg90 * df.team2_all_xgpower_xg_xg90index +
+                             df.team1_all_classic_xga90 * df.team1_all_xgpower_xg_xga90index +
+                             df.team2_all_classic_xga90 * df.team2_all_xgpower_xg_xga90index)
+    df['sum_ufr_classic_loc'] = (df.team1_home_classic_xg90 * df.team1_home_xgpower_xg_xg90index +
+                                 df.team2_away_classic_xg90 * df.team2_away_xgpower_xg_xg90index +
+                                 df.team1_home_classic_xga90 * df.team1_away_xgpower_xg_xga90index +
+                                 df.team2_home_classic_xga90 * df.team2_away_xgpower_xg_xga90index)
+    df['paper_H'] = (df.team1_all_classic_xg90 * df.team2_all_classic_xga90 *
+                     df.team1_all_xgpower_xg_xg90index) / df.team1_all_xgpower_xg_xg90noindex
+    df['paper_A'] = (df.team2_all_classic_xg90 * df.team1_all_classic_xga90 *
+                     df.team2_all_xgpower_xg_xg90index) / df.team2_all_xgpower_xg_xg90noindex
+    df['paper_H_loc'] = (df.team1_home_classic_xg90 * df.team2_away_classic_xga90 *
+                         df.team1_home_xgpower_xg_xg90index) / df.team1_home_xgpower_xg_xg90noindex
+    df['paper_A_loc'] = (df.team2_away_classic_xg90 * df.team1_home_classic_xga90 *
+                         df.team2_away_xgpower_xg_xg90index) / df.team2_away_xgpower_xg_xg90noindex
+    df['paper_03_H'] = (df['team1_all_xg90-03_xg_xg90'] * df['team2_all_xg90-03_xg_xga90'] *
+                        df['team1_all_xgpower-03_xg_xg90index']) / df['team1_all_xgpower-03_xg_xg90noindex']
+    df['paper_03_A'] = (df['team2_all_xg90-03_xg_xg90'] * df['team1_all_xg90-03_xg_xga90'] *
+                        df['team2_all_xgpower-03_xg_xg90index']) / df['team2_all_xgpower-03_xg_xg90noindex']
+    df['paper_03_H_loc'] = (df['team1_home_xg90-03_xg_xg90'] * df['team2_away_xg90-03_xg_xga90'] *
+                            df['team1_home_xgpower-03_xg_xg90index']) / df['team1_home_xgpower-03_xg_xg90noindex']
+    df['paper_03_A_loc'] = (df['team2_away_xg90-03_xg_xg90'] * df['team1_home_xg90-03_xg_xga90'] *
+                            df['team2_away_xgpower-03_xg_xg90index']) / df['team2_away_xgpower-03_xg_xg90noindex']
+    df['paper_H_plus_A'] = df['paper_H'] + df['paper_A']
+    df['paper_H_plus_A_loc'] = df['paper_H_loc'] + df['paper_A_loc']
+    df['paper_03_H_plus_03_A'] = df['paper_03_H'] + df['paper_03_A']
+    df['paper_03_H_plus_03_A_loc'] = df['paper_03_H_loc'] + df['paper_03_A_loc']
 
 
 def print_result(df: DataFrame, profit_open_column, profit_close_column, udi_column):
@@ -103,7 +201,8 @@ def analyze_avg_udi(df: DataFrame, metrics, udi_column, low_udi=0, high_udi=0.1)
     return result_df.sort_values(by=['diff'], ascending=False)
 
 
-def create_strategy_by_udi(df: DataFrame, metrics, udi_column, iterations=2, metrics_count=2, low_udi=0, high_udi=0.1) -> StrategyResult:
+def create_strategy_by_udi(df: DataFrame, metrics, udi_column, iterations=2, metrics_count=2, low_udi=0,
+                           high_udi=0.1) -> StrategyResult:
     analyze_result_df = analyze_avg_udi(df, metrics, udi_column, low_udi, high_udi)
 
     result_df = df
@@ -142,6 +241,7 @@ def analyze_correlation(df: DataFrame, base_column: str, columns: list) -> DataF
     result_df.rename(columns={base_column: 'correlation'}, inplace=True)
 
     return result_df[['correlation']][1:]
+
 
 def print_home_win_result(df: DataFrame):
     print_result(df, 'profit_win1_open', 'profit_win1_close', 'udi_win1')
