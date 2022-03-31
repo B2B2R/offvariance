@@ -8,6 +8,10 @@ metrics = [
     'simple_expected_difference_H_A_loc',
     'simple_expected_total_value',
     'simple_expected_total_value_loc',
+    'expected_goal_H',
+    'expected_goal_A',
+    'expected_goal_H_loc',
+    'expected_goal_A_loc',
     'expected_difference_H_A',
     'expected_difference_A_H',
     'expected_difference_H_A_loc',
@@ -107,12 +111,16 @@ def populate_unfinished_metrics(df: DataFrame):
     df['expected_total_loc'] = (
             df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index +
             df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index)
+    df['expected_goal_H'] = df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index
+    df['expected_goal_A'] = df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index
     df['expected_difference_H_A'] = (
             df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index -
             df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index)
     df['expected_difference_A_H'] = (
             df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index -
             df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index)
+    df['expected_goal_H_loc'] = df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index
+    df['expected_goal_A_loc'] = df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index
     df['expected_difference_H_A_loc'] = (
             df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index -
             df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index)
