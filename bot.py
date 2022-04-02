@@ -21,6 +21,7 @@ handle = open('bot/commands.txt', 'r')
 commands = handle.read()
 handle.close()
 
+
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     if message.chat.id == user_id:
@@ -28,6 +29,7 @@ def send_welcome(message):
 
     if len(user_id) == 0:
         bot.send_message(message.chat.id, "Hi, your id is " + str(message.chat.id))
+
 
 @bot.message_handler(commands=['list'])
 def send_list(message: Message):
@@ -45,6 +47,7 @@ def send_list(message: Message):
 
     utils.notify_games_list(bot, filtered_games_df, message.chat.id)
 
+
 @bot.callback_query_handler(func=lambda call: True)
 def test_callback(callback: CallbackQuery):
     request = callback.data.split()
@@ -55,5 +58,6 @@ def test_callback(callback: CallbackQuery):
     if request[0] == 'close':
         history.store_action(request[0], int(request[1]), request[2])
         bot.send_message(callback.message.chat.id, "Bet " + request[2] + ' for game #' + request[1] + ' closed')
+
 
 bot.infinity_polling()
