@@ -8,28 +8,30 @@ metrics = [
     'simple_expected_difference_H_A_loc',
     'simple_expected_total_value',
     'simple_expected_total_value_loc',
-    'expected_goal_H',
-    'expected_goal_A',
-    'expected_goal_H_loc',
-    'expected_goal_A_loc',
-    'expected_difference_H_A',
-    'expected_difference_A_H',
-    'expected_difference_H_A_loc',
-    'expected_difference_A_H_loc',
-    'expected_total',
-    'expected_total_loc',
-    'expected_goal_03_H',
-    'expected_goal_03_A',
-    'expected_difference_03_H_A',
-    'expected_difference_03_A_H',
-    'expected_goal_03_H_loc',
-    'expected_goal_03_A_loc',
-    'expected_difference_03_H_A_loc',
-    'expected_difference_03_A_H_loc',
+    'exp_g_H',
+    'exp_g_A',
+    'exp_g_H_loc',
+    'exp_g_A_loc',
+    'exp_diff_H_A',
+    'exp_diff_A_H',
+    'exp_diff_H_A_loc',
+    'exp_diff_A_H_loc',
+    'exp_total',
+    'exp_total_loc',
+    'exp_g_03_H',
+    'exp_g_03_A',
+    'exp_diff_03_H_A',
+    'exp_diff_03_A_H',
+    'exp_g_03_H_loc',
+    'exp_g_03_A_loc',
+    'exp_diff_03_H_A_loc',
+    'exp_diff_03_A_H_loc',
+    'exp_total_03',
+    'exp_total_03_loc',
     'sum_ufr_03',
     'sum_ufr_03_loc',
-    'sum_ufr_classic',
-    'sum_ufr_classic_loc',
+    'sum_ufr',
+    'sum_ufr_loc',
     'paper_H',
     'paper_A',
     'paper_H_loc',
@@ -38,14 +40,194 @@ metrics = [
     'paper_03_A',
     'paper_03_H_loc',
     'paper_03_A_loc',
-    'paper_H_plus_A',
-    'paper_H_plus_A_loc',
-    'paper_03_H_plus_03_A',
-    'paper_03_H_plus_03_A_loc',
+    'paper_total',
+    'paper_total_loc',
+    'paper_total_03',
+    'paper_total_03_loc',
     'paper_diff_H_A',
     'paper_diff_A_H',
+    'paper_diff_H_A_loc',
+    'paper_diff_A_H_loc',
     'paper_diff_03_H_A',
-    'paper_diff_03_A_H'
+    'paper_diff_03_A_H',
+    'paper_diff_03_H_A_loc',
+    'paper_diff_03_A_H_loc',
+    'exp_g_H_draw',
+    'exp_g_A_draw',
+    'exp_g_H_loc_draw',
+    'exp_g_A_loc_draw',
+    'exp_g_03_H_draw',
+    'exp_g_03_A_draw',
+    'exp_g_03_H_loc_draw',
+    'exp_g_03_A_loc_draw',
+    'exp_g_total_draw',
+    'exp_g_total_loc_draw',
+    'exp_g_diff_H_A_draw',
+    'exp_g_diff_A_H_draw',
+    'exp_g_diff_H_A_loc_draw',
+    'exp_g_diff_A_H_loc_draw',
+    'exp_g_total_03_draw',
+    'exp_g_total_03_loc_draw',
+    'exp_g_diff_03_H_A_draw',
+    'exp_g_diff_03_A_H_draw',
+    'exp_g_diff_03_H_A_loc_draw',
+    'exp_g_diff_03_A_H_loc_draw',
+    'exp_g_H_zero',
+    'exp_g_A_zero',
+    'exp_g_H_loc_zero',
+    'exp_g_A_loc_zero',
+    'exp_g_03_H_zero',
+    'exp_g_03_A_zero',
+    'exp_g_03_H_loc_zero',
+    'exp_g_03_A_loc_zero',
+    'exp_g_total_zero',
+    'exp_g_total_loc_zero',
+    'exp_g_diff_H_A_zero',
+    'exp_g_diff_A_H_zero',
+    'exp_g_diff_H_A_loc_zero',
+    'exp_g_diff_A_H_loc_zero',
+    'exp_g_total_03_zero',
+    'exp_g_total_03_loc_zero',
+    'exp_g_diff_03_H_A_zero',
+    'exp_g_diff_03_A_H_zero',
+    'exp_g_diff_03_H_A_loc_zero',
+    'exp_g_diff_03_A_H_loc_zero',
+    'exp_g_H_cop',
+    'exp_g_A_cop',
+    'exp_g_H_loc_cop',
+    'exp_g_A_loc_cop',
+    'exp_g_03_H_cop',
+    'exp_g_03_A_cop',
+    'exp_g_03_H_loc_cop',
+    'exp_g_03_A_loc_cop',
+    'exp_g_total_cop',
+    'exp_g_total_loc_cop',
+    'exp_g_diff_H_A_cop',
+    'exp_g_diff_A_H_cop',
+    'exp_g_diff_H_A_loc_cop',
+    'exp_g_diff_A_H_loc_cop',
+    'exp_g_total_03_cop',
+    'exp_g_total_03_loc_cop',
+    'exp_g_diff_03_H_A_cop',
+    'exp_g_diff_03_A_H_cop',
+    'exp_g_diff_03_H_A_loc_cop',
+    'exp_g_diff_03_A_H_loc_cop',
+    'exp_g_H_com',
+    'exp_g_A_com',
+    'exp_g_H_loc_com',
+    'exp_g_A_loc_com',
+    'exp_g_03_H_com',
+    'exp_g_03_A_com',
+    'exp_g_03_H_loc_com',
+    'exp_g_03_A_loc_com',
+    'exp_g_total_com',
+    'exp_g_total_loc_com',
+    'exp_g_diff_H_A_com',
+    'exp_g_diff_A_H_com',
+    'exp_g_diff_H_A_loc_com',
+    'exp_g_diff_A_H_loc_com',
+    'exp_g_total_03_com',
+    'exp_g_total_03_loc_com',
+    'exp_g_diff_03_H_A_com',
+    'exp_g_diff_03_A_H_com',
+    'exp_g_diff_03_H_A_loc_com',
+    'exp_g_diff_03_A_H_loc_com',
+    'sum_ufr_03_draw',
+    'sum_ufr_03_loc_draw',
+    'sum_ufr_draw',
+    'sum_ufr_loc_draw',
+    'sum_ufr_03_zero',
+    'sum_ufr_03_loc_zero',
+    'sum_ufr_zero',
+    'sum_ufr_loc_zero',
+    'sum_ufr_03_cop',
+    'sum_ufr_03_loc_cop',
+    'sum_ufr_cop',
+    'sum_ufr_loc_cop',
+    'sum_ufr_03_com',
+    'sum_ufr_03_loc_com',
+    'sum_ufr_com',
+    'sum_ufr_loc_com',
+    'paper_H_draw',
+    'paper_A_draw',
+    'paper_H_loc_draw',
+    'paper_A_loc_draw',
+    'paper_03_H_draw',
+    'paper_03_A_draw',
+    'paper_03_H_loc_draw',
+    'paper_03_A_loc_draw',
+    'paper_total_draw',
+    'paper_total_loc_draw',
+    'paper_total_03_draw',
+    'paper_total_03_loc_draw',
+    'paper_diff_H_A_draw',
+    'paper_diff_A_H_draw',
+    'paper_diff_H_A_loc_draw',
+    'paper_diff_A_H_loc_draw',
+    'paper_diff_03_H_A_draw',
+    'paper_diff_03_A_H_draw',
+    'paper_diff_03_H_A_loc_draw',
+    'paper_diff_03_A_H_loc_draw',
+    'paper_H_zero',
+    'paper_A_zero',
+    'paper_H_loc_zero',
+    'paper_A_loc_zero',
+    'paper_03_H_zero',
+    'paper_03_A_zero',
+    'paper_03_H_loc_zero',
+    'paper_03_A_loc_zero',
+    'paper_total_zero',
+    'paper_total_loc_zero',
+    'paper_total_03_zero',
+    'paper_total_03_loc_zero',
+    'paper_diff_H_A_zero',
+    'paper_diff_A_H_zero',
+    'paper_diff_H_A_loc_zero',
+    'paper_diff_A_H_loc_zero',
+    'paper_diff_03_H_A_zero',
+    'paper_diff_03_A_H_zero',
+    'paper_diff_03_H_A_loc_zero',
+    'paper_diff_03_A_H_loc_zero',
+    'paper_H_cop',
+    'paper_A_cop',
+    'paper_H_loc_cop',
+    'paper_A_loc_cop',
+    'paper_03_H_cop',
+    'paper_03_A_cop',
+    'paper_03_H_loc_cop',
+    'paper_03_A_loc_cop',
+    'paper_total_cop',
+    'paper_total_loc_cop',
+    'paper_total_03_cop',
+    'paper_total_03_loc_cop',
+    'paper_diff_H_A_cop',
+    'paper_diff_A_H_cop',
+    'paper_diff_H_A_loc_cop',
+    'paper_diff_A_H_loc_cop',
+    'paper_diff_03_H_A_cop',
+    'paper_diff_03_A_H_cop',
+    'paper_diff_03_H_A_loc_cop',
+    'paper_diff_03_A_H_loc_cop',
+    'paper_H_com',
+    'paper_A_com',
+    'paper_H_loc_com',
+    'paper_A_loc_com',
+    'paper_03_H_com',
+    'paper_03_A_com',
+    'paper_03_H_loc_com',
+    'paper_03_A_loc_com',
+    'paper_total_com',
+    'paper_total_loc_com',
+    'paper_total_03_com',
+    'paper_total_03_loc_com',
+    'paper_diff_H_A_com',
+    'paper_diff_A_H_com',
+    'paper_diff_H_A_loc_com',
+    'paper_diff_A_H_loc_com',
+    'paper_diff_03_H_A_com',
+    'paper_diff_03_A_H_com',
+    'paper_diff_03_H_A_loc_com',
+    'paper_diff_03_A_H_loc_com'
 ]
 
 
@@ -105,46 +287,52 @@ def populate_unfinished_metrics(df: DataFrame):
     df['simple_expected_total_value_loc'] = (
             df.team1_home_classic_xg90 + df.team2_away_classic_xg90 +
             df.team1_home_classic_xga90 + df.team2_away_classic_xga90)
-    df['expected_total'] = (
+    df['exp_total'] = (
             df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index +
             df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index)
-    df['expected_total_loc'] = (
+    df['exp_total_loc'] = (
             df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index +
             df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index)
-    df['expected_goal_H'] = df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index
-    df['expected_goal_A'] = df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index
-    df['expected_difference_H_A'] = (
+    df['exp_g_H'] = df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index
+    df['exp_g_A'] = df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index
+    df['exp_diff_H_A'] = (
             df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index -
             df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index)
-    df['expected_difference_A_H'] = (
+    df['exp_diff_A_H'] = (
             df.team2_all_xgpower_xg_xg90noindex * df.team1_all_xgpower_xg_xga90index -
             df.team1_all_xgpower_xg_xg90noindex * df.team2_all_xgpower_xg_xga90index)
-    df['expected_goal_H_loc'] = df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index
-    df['expected_goal_A_loc'] = df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index
-    df['expected_difference_H_A_loc'] = (
+    df['exp_g_H_loc'] = df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index
+    df['exp_g_A_loc'] = df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index
+    df['exp_diff_H_A_loc'] = (
             df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index -
             df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index)
-    df['expected_difference_A_H_loc'] = (
+    df['exp_diff_A_H_loc'] = (
             df.team2_away_xgpower_xg_xg90noindex * df.team1_home_xgpower_xg_xga90index -
             df.team1_home_xgpower_xg_xg90noindex * df.team2_away_xgpower_xg_xga90index)
-    df['expected_goal_03_H'] = df['team1_all_xgpower-03_xg_xg90noindex'] * df['team2_all_xgpower-03_xg_xga90index']
-    df['expected_goal_03_A'] = df['team2_all_xgpower-03_xg_xg90noindex'] * df['team1_all_xgpower-03_xg_xga90index']
-    df['expected_difference_03_H_A'] = (
+    df['exp_g_03_H'] = df['team1_all_xgpower-03_xg_xg90noindex'] * df['team2_all_xgpower-03_xg_xga90index']
+    df['exp_g_03_A'] = df['team2_all_xgpower-03_xg_xg90noindex'] * df['team1_all_xgpower-03_xg_xga90index']
+    df['exp_diff_03_H_A'] = (
             df['team1_all_xgpower-03_xg_xg90noindex'] * df['team2_all_xgpower-03_xg_xga90index'] -
             df['team2_all_xgpower-03_xg_xg90noindex'] * df['team1_all_xgpower-03_xg_xga90index'])
-    df['expected_difference_03_A_H'] = (
+    df['exp_diff_03_A_H'] = (
             df['team2_all_xgpower-03_xg_xg90noindex'] * df['team1_all_xgpower-03_xg_xga90index'] -
             df['team1_all_xgpower-03_xg_xg90noindex'] * df['team2_all_xgpower-03_xg_xga90index'])
-    df['expected_goal_03_H_loc'] = df['team1_home_xgpower-03_xg_xg90noindex'] * df[
-        'team2_away_xgpower-03_xg_xga90index']
-    df['expected_goal_03_A_loc'] = df['team2_away_xgpower-03_xg_xg90noindex'] * df[
-        'team1_home_xgpower-03_xg_xga90index']
-    df['expected_difference_03_H_A_loc'] = (
+    df['exp_g_03_H_loc'] = (
+            df['team1_home_xgpower-03_xg_xg90noindex'] * df['team2_away_xgpower-03_xg_xga90index'])
+    df['exp_g_03_A_loc'] = (
+            df['team2_away_xgpower-03_xg_xg90noindex'] * df['team1_home_xgpower-03_xg_xga90index'])
+    df['exp_diff_03_H_A_loc'] = (
             df['team1_home_xgpower-03_xg_xg90noindex'] * df['team2_away_xgpower-03_xg_xga90index'] -
             df['team2_away_xgpower-03_xg_xg90noindex'] * df['team1_home_xgpower-03_xg_xga90index'])
-    df['expected_difference_03_A_H_loc'] = (
+    df['exp_diff_03_A_H_loc'] = (
             df['team2_away_xgpower-03_xg_xg90noindex'] * df['team1_home_xgpower-03_xg_xga90index'] -
             df['team1_home_xgpower-03_xg_xg90noindex'] * df['team2_away_xgpower-03_xg_xga90index'])
+    df['exp_total_03'] = (
+            df['team1_all_xgpower-03_xg_xg90noindex'] * df['team2_all_xgpower-03_xg_xga90index'] +
+            df['team2_all_xgpower-03_xg_xg90noindex'] * df['team1_all_xgpower-03_xg_xga90index'])
+    df['exp_total_03_loc'] = (
+            df['team1_home_xgpower-03_xg_xg90noindex'] * df['team2_away_xgpower-03_xg_xga90index'] +
+            df['team2_away_xgpower-03_xg_xg90noindex'] * df['team1_home_xgpower-03_xg_xga90index'])
     df['sum_ufr_03'] = (df['team1_all_xg90-03_xg_xg90'] * df['team1_all_xgpower-03_xg_xg90index'] +
                         df['team2_all_xg90-03_xg_xg90'] * df['team2_all_xgpower-03_xg_xg90index'] +
                         df['team1_all_xg90-03_xg_xga90'] * df['team1_all_xgpower-03_xg_xga90index'] +
@@ -153,14 +341,14 @@ def populate_unfinished_metrics(df: DataFrame):
                             df['team2_away_xg90-03_xg_xg90'] * df['team2_away_xgpower-03_xg_xg90index'] +
                             df['team1_home_xg90-03_xg_xga90'] * df['team1_home_xgpower-03_xg_xga90index'] +
                             df['team2_away_xg90-03_xg_xga90'] * df['team2_away_xgpower-03_xg_xga90index'])
-    df['sum_ufr_classic'] = (df.team1_all_classic_xg90 * df.team1_all_xgpower_xg_xg90index +
-                             df.team2_all_classic_xg90 * df.team2_all_xgpower_xg_xg90index +
-                             df.team1_all_classic_xga90 * df.team1_all_xgpower_xg_xga90index +
-                             df.team2_all_classic_xga90 * df.team2_all_xgpower_xg_xga90index)
-    df['sum_ufr_classic_loc'] = (df.team1_home_classic_xg90 * df.team1_home_xgpower_xg_xg90index +
-                                 df.team2_away_classic_xg90 * df.team2_away_xgpower_xg_xg90index +
-                                 df.team1_home_classic_xga90 * df.team1_away_xgpower_xg_xga90index +
-                                 df.team2_home_classic_xga90 * df.team2_away_xgpower_xg_xga90index)
+    df['sum_ufr'] = (df.team1_all_classic_xg90 * df.team1_all_xgpower_xg_xg90index +
+                     df.team2_all_classic_xg90 * df.team2_all_xgpower_xg_xg90index +
+                     df.team1_all_classic_xga90 * df.team1_all_xgpower_xg_xga90index +
+                     df.team2_all_classic_xga90 * df.team2_all_xgpower_xg_xga90index)
+    df['sum_ufr_loc'] = (df.team1_home_classic_xg90 * df.team1_home_xgpower_xg_xg90index +
+                         df.team2_away_classic_xg90 * df.team2_away_xgpower_xg_xg90index +
+                         df.team1_home_classic_xga90 * df.team1_away_xgpower_xg_xga90index +
+                         df.team2_home_classic_xga90 * df.team2_away_xgpower_xg_xga90index)
     df['paper_H'] = (df.team1_all_classic_xg90 * df.team2_all_classic_xga90 *
                      df.team1_all_xgpower_xg_xg90index) / df.team1_all_xgpower_xg_xg90noindex
     df['paper_A'] = (df.team2_all_classic_xg90 * df.team1_all_classic_xga90 *
@@ -177,14 +365,284 @@ def populate_unfinished_metrics(df: DataFrame):
                             df['team1_home_xgpower-03_xg_xg90index']) / df['team1_home_xgpower-03_xg_xg90noindex']
     df['paper_03_A_loc'] = (df['team2_away_xg90-03_xg_xg90'] * df['team1_home_xg90-03_xg_xga90'] *
                             df['team2_away_xgpower-03_xg_xg90index']) / df['team2_away_xgpower-03_xg_xg90noindex']
-    df['paper_H_plus_A'] = df['paper_H'] + df['paper_A']
-    df['paper_H_plus_A_loc'] = df['paper_H_loc'] + df['paper_A_loc']
-    df['paper_03_H_plus_03_A'] = df['paper_03_H'] + df['paper_03_A']
-    df['paper_03_H_plus_03_A_loc'] = df['paper_03_H_loc'] + df['paper_03_A_loc']
+    df['paper_total'] = df['paper_H'] + df['paper_A']
+    df['paper_total_loc'] = df['paper_H_loc'] + df['paper_A_loc']
+    df['paper_total_03'] = df['paper_03_H'] + df['paper_03_A']
+    df['paper_total_03_loc'] = df['paper_03_H_loc'] + df['paper_03_A_loc']
     df['paper_diff_H_A'] = df['paper_H'] - df['paper_A']
     df['paper_diff_A_H'] = df['paper_A'] - df['paper_H']
+    df['paper_diff_H_A_loc'] = df['paper_H_loc'] - df['paper_A_loc']
+    df['paper_diff_A_H_loc'] = df['paper_A_loc'] - df['paper_H_loc']
     df['paper_diff_03_H_A'] = df['paper_03_H'] - df['paper_03_A']
     df['paper_diff_03_A_H'] = df['paper_03_A'] - df['paper_03_H']
+    df['paper_diff_03_H_A_loc'] = df['paper_03_H_loc'] - df['paper_03_A_loc']
+    df['paper_diff_03_A_H_loc'] = df['paper_03_A_loc'] - df['paper_03_H_loc']
+    df['exp_g_H_draw'] = df.team1_all_xgpower_draw_xg90noindex * df.team2_all_xgpower_draw_xga90index
+    df['exp_g_A_draw'] = df.team2_all_xgpower_draw_xg90noindex * df.team1_all_xgpower_draw_xga90index
+    df['exp_g_H_loc_draw'] = df.team1_home_xgpower_draw_xg90noindex * df.team2_away_xgpower_draw_xga90index
+    df['exp_g_A_loc_draw'] = df.team2_away_xgpower_draw_xg90noindex * df.team1_home_xgpower_draw_xga90index
+    df['exp_g_03_H_draw'] = df['team1_all_xgpower-03_draw_xg90noindex'] * df['team2_all_xgpower-03_draw_xga90index']
+    df['exp_g_03_A_draw'] = df['team2_all_xgpower-03_draw_xg90noindex'] * df['team1_all_xgpower-03_draw_xga90index']
+    df['exp_g_03_H_loc_draw'] = (
+            df['team1_home_xgpower-03_draw_xg90noindex'] * df['team2_away_xgpower-03_draw_xga90index'])
+    df['exp_g_03_A_loc_draw'] = (
+            df['team2_away_xgpower-03_draw_xg90noindex'] * df['team1_home_xgpower-03_draw_xga90index'])
+    df['exp_g_total_draw'] = df['exp_g_H_draw'] + df['exp_g_A_draw']
+    df['exp_g_total_loc_draw'] = df['exp_g_H_loc_draw'] + df['exp_g_A_loc_draw']
+    df['exp_g_diff_H_A_draw'] = df['exp_g_H_draw'] - df['exp_g_A_draw']
+    df['exp_g_diff_A_H_draw'] = df['exp_g_A_draw'] - df['exp_g_H_draw']
+    df['exp_g_diff_H_A_loc_draw'] = df['exp_g_H_loc_draw'] - df['exp_g_A_loc_draw']
+    df['exp_g_diff_A_H_loc_draw'] = df['exp_g_A_loc_draw'] - df['exp_g_H_loc_draw']
+    df['exp_g_total_03_draw'] = df['exp_g_03_H_draw'] + df['exp_g_03_A_draw']
+    df['exp_g_total_03_loc_draw'] = df['exp_g_03_H_loc_draw'] + df['exp_g_03_A_loc_draw']
+    df['exp_g_diff_03_H_A_draw'] = df['exp_g_03_H_draw'] - df['exp_g_03_A_draw']
+    df['exp_g_diff_03_A_H_draw'] = df['exp_g_03_A_draw'] - df['exp_g_03_H_draw']
+    df['exp_g_diff_03_H_A_loc_draw'] = df['exp_g_03_H_loc_draw'] - df['exp_g_03_A_loc_draw']
+    df['exp_g_diff_03_A_H_loc_draw'] = df['exp_g_03_A_loc_draw'] - df['exp_g_03_H_loc_draw']
+    df['exp_g_H_zero'] = df.team1_all_xgpower_zero_xg90noindex * df.team2_all_xgpower_zero_xga90index
+    df['exp_g_A_zero'] = df.team2_all_xgpower_zero_xg90noindex * df.team1_all_xgpower_zero_xga90index
+    df['exp_g_H_loc_zero'] = df.team1_home_xgpower_zero_xg90noindex * df.team2_away_xgpower_zero_xga90index
+    df['exp_g_A_loc_zero'] = df.team2_away_xgpower_zero_xg90noindex * df.team1_home_xgpower_zero_xga90index
+    df['exp_g_03_H_zero'] = df['team1_all_xgpower-03_zero_xg90noindex'] * df['team2_all_xgpower-03_zero_xga90index']
+    df['exp_g_03_A_zero'] = df['team2_all_xgpower-03_zero_xg90noindex'] * df['team1_all_xgpower-03_zero_xga90index']
+    df['exp_g_03_H_loc_zero'] = (
+            df['team1_home_xgpower-03_zero_xg90noindex'] * df['team2_away_xgpower-03_zero_xga90index'])
+    df['exp_g_03_A_loc_zero'] = (
+            df['team2_away_xgpower-03_zero_xg90noindex'] * df['team1_home_xgpower-03_zero_xga90index'])
+    df['exp_g_total_zero'] = df['exp_g_H_zero'] + df['exp_g_A_zero']
+    df['exp_g_total_loc_zero'] = df['exp_g_H_loc_zero'] + df['exp_g_A_loc_zero']
+    df['exp_g_diff_H_A_zero'] = df['exp_g_H_zero'] - df['exp_g_A_zero']
+    df['exp_g_diff_A_H_zero'] = df['exp_g_A_zero'] - df['exp_g_H_zero']
+    df['exp_g_diff_H_A_loc_zero'] = df['exp_g_H_loc_zero'] - df['exp_g_A_loc_zero']
+    df['exp_g_diff_A_H_loc_zero'] = df['exp_g_A_loc_zero'] - df['exp_g_H_loc_zero']
+    df['exp_g_total_03_zero'] = df['exp_g_03_H_zero'] + df['exp_g_03_A_zero']
+    df['exp_g_total_03_loc_zero'] = df['exp_g_03_H_loc_zero'] + df['exp_g_03_A_loc_zero']
+    df['exp_g_diff_03_H_A_zero'] = df['exp_g_03_H_zero'] - df['exp_g_03_A_zero']
+    df['exp_g_diff_03_A_H_zero'] = df['exp_g_03_A_zero'] - df['exp_g_03_H_zero']
+    df['exp_g_diff_03_H_A_loc_zero'] = df['exp_g_03_H_loc_zero'] - df['exp_g_03_A_loc_zero']
+    df['exp_g_diff_03_A_H_loc_zero'] = df['exp_g_03_A_loc_zero'] - df['exp_g_03_H_loc_zero']
+    df['exp_g_H_cop'] = df.team1_all_xgpower_cop_xg90noindex * df.team2_all_xgpower_com_xga90index
+    df['exp_g_A_cop'] = df.team2_all_xgpower_cop_xg90noindex * df.team1_all_xgpower_com_xga90index
+    df['exp_g_H_loc_cop'] = df.team1_home_xgpower_cop_xg90noindex * df.team2_away_xgpower_com_xga90index
+    df['exp_g_A_loc_cop'] = df.team2_away_xgpower_cop_xg90noindex * df.team1_home_xgpower_com_xga90index
+    df['exp_g_03_H_cop'] = df['team1_all_xgpower-03_cop_xg90noindex'] * df['team2_all_xgpower-03_com_xga90index']
+    df['exp_g_03_A_cop'] = df['team2_all_xgpower-03_cop_xg90noindex'] * df['team1_all_xgpower-03_com_xga90index']
+    df['exp_g_03_H_loc_cop'] = (
+            df['team1_home_xgpower-03_cop_xg90noindex'] * df['team2_away_xgpower-03_com_xga90index'])
+    df['exp_g_03_A_loc_cop'] = (
+            df['team2_away_xgpower-03_cop_xg90noindex'] * df['team1_home_xgpower-03_com_xga90index'])
+    df['exp_g_total_cop'] = df['exp_g_H_cop'] + df['exp_g_A_cop']
+    df['exp_g_total_loc_cop'] = df['exp_g_H_loc_cop'] + df['exp_g_A_loc_cop']
+    df['exp_g_diff_H_A_cop'] = df['exp_g_H_cop'] - df['exp_g_A_cop']
+    df['exp_g_diff_A_H_cop'] = df['exp_g_A_cop'] - df['exp_g_H_cop']
+    df['exp_g_diff_H_A_loc_cop'] = df['exp_g_H_loc_cop'] - df['exp_g_A_loc_cop']
+    df['exp_g_diff_A_H_loc_cop'] = df['exp_g_A_loc_cop'] - df['exp_g_H_loc_cop']
+    df['exp_g_total_03_cop'] = df['exp_g_03_H_cop'] + df['exp_g_03_A_cop']
+    df['exp_g_total_03_loc_cop'] = df['exp_g_03_H_loc_cop'] + df['exp_g_03_A_loc_cop']
+    df['exp_g_diff_03_H_A_cop'] = df['exp_g_03_H_cop'] - df['exp_g_03_A_cop']
+    df['exp_g_diff_03_A_H_cop'] = df['exp_g_03_A_cop'] - df['exp_g_03_H_cop']
+    df['exp_g_diff_03_H_A_loc_cop'] = df['exp_g_03_H_loc_cop'] - df['exp_g_03_A_loc_cop']
+    df['exp_g_diff_03_A_H_loc_cop'] = df['exp_g_03_A_loc_cop'] - df['exp_g_03_H_loc_cop']
+    df['exp_g_H_com'] = df.team1_all_xgpower_com_xg90noindex * df.team2_all_xgpower_cop_xga90index
+    df['exp_g_A_com'] = df.team2_all_xgpower_com_xg90noindex * df.team1_all_xgpower_cop_xga90index
+    df['exp_g_H_loc_com'] = df.team1_home_xgpower_com_xg90noindex * df.team2_away_xgpower_cop_xga90index
+    df['exp_g_A_loc_com'] = df.team2_away_xgpower_com_xg90noindex * df.team1_home_xgpower_cop_xga90index
+    df['exp_g_03_H_com'] = df['team1_all_xgpower-03_com_xg90noindex'] * df['team2_all_xgpower-03_cop_xga90index']
+    df['exp_g_03_A_com'] = df['team2_all_xgpower-03_com_xg90noindex'] * df['team1_all_xgpower-03_cop_xga90index']
+    df['exp_g_03_H_loc_com'] = (
+            df['team1_home_xgpower-03_com_xg90noindex'] * df['team2_away_xgpower-03_cop_xga90index'])
+    df['exp_g_03_A_loc_com'] = (
+            df['team2_away_xgpower-03_com_xg90noindex'] * df['team1_home_xgpower-03_cop_xga90index'])
+    df['exp_g_total_com'] = df['exp_g_H_com'] + df['exp_g_A_com']
+    df['exp_g_total_loc_com'] = df['exp_g_H_loc_com'] + df['exp_g_A_loc_com']
+    df['exp_g_diff_H_A_com'] = df['exp_g_H_com'] - df['exp_g_A_com']
+    df['exp_g_diff_A_H_com'] = df['exp_g_A_com'] - df['exp_g_H_com']
+    df['exp_g_diff_H_A_loc_com'] = df['exp_g_H_loc_com'] - df['exp_g_A_loc_com']
+    df['exp_g_diff_A_H_loc_com'] = df['exp_g_A_loc_com'] - df['exp_g_H_loc_com']
+    df['exp_g_total_03_com'] = df['exp_g_03_H_com'] + df['exp_g_03_A_com']
+    df['exp_g_total_03_loc_com'] = df['exp_g_03_H_loc_com'] + df['exp_g_03_A_loc_com']
+    df['exp_g_diff_03_H_A_com'] = df['exp_g_03_H_com'] - df['exp_g_03_A_com']
+    df['exp_g_diff_03_A_H_com'] = df['exp_g_03_A_com'] - df['exp_g_03_H_com']
+    df['exp_g_diff_03_H_A_loc_com'] = df['exp_g_03_H_loc_com'] - df['exp_g_03_A_loc_com']
+    df['exp_g_diff_03_A_H_loc_com'] = df['exp_g_03_A_loc_com'] - df['exp_g_03_H_loc_com']
+    df['sum_ufr_03_draw'] = (df['team1_all_xg90-03_draw_xg90'] * df['team1_all_xgpower-03_draw_xg90index'] +
+                             df['team2_all_xg90-03_draw_xg90'] * df['team2_all_xgpower-03_draw_xg90index'] +
+                             df['team1_all_xg90-03_draw_xga90'] * df['team1_all_xgpower-03_draw_xga90index'] +
+                             df['team2_all_xg90-03_draw_xga90'] * df['team2_all_xgpower-03_draw_xga90index'])
+    df['sum_ufr_03_loc_draw'] = (df['team1_home_xg90-03_draw_xg90'] * df['team1_home_xgpower-03_draw_xg90index'] +
+                                 df['team2_away_xg90-03_draw_xg90'] * df['team2_away_xgpower-03_draw_xg90index'] +
+                                 df['team1_home_xg90-03_draw_xga90'] * df['team1_home_xgpower-03_draw_xga90index'] +
+                                 df['team2_away_xg90-03_draw_xga90'] * df['team2_away_xgpower-03_draw_xga90index'])
+    df['sum_ufr_draw'] = (df.team1_all_xg90_draw_xg90 * df.team1_all_xgpower_draw_xg90index +
+                          df.team2_all_xg90_draw_xg90 * df.team2_all_xgpower_draw_xg90index +
+                          df.team1_all_xg90_draw_xga90 * df.team1_all_xgpower_draw_xga90index +
+                          df.team2_all_xg90_draw_xga90 * df.team2_all_xgpower_draw_xga90index)
+    df['sum_ufr_loc_draw'] = (df.team1_home_xg90_draw_xg90 * df.team1_home_xgpower_draw_xg90index +
+                              df.team2_away_xg90_draw_xg90 * df.team2_away_xgpower_draw_xg90index +
+                              df.team1_home_xg90_draw_xga90 * df.team1_away_xgpower_draw_xga90index +
+                              df.team2_home_xg90_draw_xga90 * df.team2_away_xgpower_draw_xga90index)
+    df['sum_ufr_03_zero'] = (df['team1_all_xg90-03_zero_xg90'] * df['team1_all_xgpower-03_zero_xg90index'] +
+                             df['team2_all_xg90-03_zero_xg90'] * df['team2_all_xgpower-03_zero_xg90index'] +
+                             df['team1_all_xg90-03_zero_xga90'] * df['team1_all_xgpower-03_zero_xga90index'] +
+                             df['team2_all_xg90-03_zero_xga90'] * df['team2_all_xgpower-03_zero_xga90index'])
+    df['sum_ufr_03_loc_zero'] = (df['team1_home_xg90-03_zero_xg90'] * df['team1_home_xgpower-03_zero_xg90index'] +
+                                 df['team2_away_xg90-03_zero_xg90'] * df['team2_away_xgpower-03_zero_xg90index'] +
+                                 df['team1_home_xg90-03_zero_xga90'] * df['team1_home_xgpower-03_zero_xga90index'] +
+                                 df['team2_away_xg90-03_zero_xga90'] * df['team2_away_xgpower-03_zero_xga90index'])
+    df['sum_ufr_zero'] = (df.team1_all_xg90_zero_xg90 * df.team1_all_xgpower_zero_xg90index +
+                          df.team2_all_xg90_zero_xg90 * df.team2_all_xgpower_zero_xg90index +
+                          df.team1_all_xg90_zero_xga90 * df.team1_all_xgpower_zero_xga90index +
+                          df.team2_all_xg90_zero_xga90 * df.team2_all_xgpower_zero_xga90index)
+    df['sum_ufr_loc_zero'] = (df.team1_home_xg90_zero_xg90 * df.team1_home_xgpower_zero_xg90index +
+                              df.team2_away_xg90_zero_xg90 * df.team2_away_xgpower_zero_xg90index +
+                              df.team1_home_xg90_zero_xga90 * df.team1_away_xgpower_zero_xga90index +
+                              df.team2_home_xg90_zero_xga90 * df.team2_away_xgpower_zero_xga90index)
+    df['sum_ufr_03_cop'] = (df['team1_all_xg90-03_cop_xg90'] * df['team1_all_xgpower-03_cop_xg90index'] +
+                            df['team2_all_xg90-03_com_xg90'] * df['team2_all_xgpower-03_com_xg90index'] +
+                            df['team1_all_xg90-03_cop_xga90'] * df['team1_all_xgpower-03_cop_xga90index'] +
+                            df['team2_all_xg90-03_com_xga90'] * df['team2_all_xgpower-03_com_xga90index'])
+    df['sum_ufr_03_loc_cop'] = (df['team1_home_xg90-03_cop_xg90'] * df['team1_home_xgpower-03_cop_xg90index'] +
+                                df['team2_away_xg90-03_com_xg90'] * df['team2_away_xgpower-03_com_xg90index'] +
+                                df['team1_home_xg90-03_cop_xga90'] * df['team1_home_xgpower-03_cop_xga90index'] +
+                                df['team2_away_xg90-03_com_xga90'] * df['team2_away_xgpower-03_com_xga90index'])
+    df['sum_ufr_cop'] = (df.team1_all_xg90_cop_xg90 * df.team1_all_xgpower_cop_xg90index +
+                         df.team2_all_xg90_com_xg90 * df.team2_all_xgpower_com_xg90index +
+                         df.team1_all_xg90_cop_xga90 * df.team1_all_xgpower_cop_xga90index +
+                         df.team2_all_xg90_com_xga90 * df.team2_all_xgpower_com_xga90index)
+    df['sum_ufr_loc_cop'] = (df.team1_home_xg90_cop_xg90 * df.team1_home_xgpower_cop_xg90index +
+                             df.team2_away_xg90_com_xg90 * df.team2_away_xgpower_com_xg90index +
+                             df.team1_home_xg90_cop_xga90 * df.team1_away_xgpower_cop_xga90index +
+                             df.team2_home_xg90_com_xga90 * df.team2_away_xgpower_com_xga90index)
+    df['sum_ufr_03_com'] = (df['team1_all_xg90-03_com_xg90'] * df['team1_all_xgpower-03_com_xg90index'] +
+                            df['team2_all_xg90-03_cop_xg90'] * df['team2_all_xgpower-03_cop_xg90index'] +
+                            df['team1_all_xg90-03_com_xga90'] * df['team1_all_xgpower-03_com_xga90index'] +
+                            df['team2_all_xg90-03_cop_xga90'] * df['team2_all_xgpower-03_cop_xga90index'])
+    df['sum_ufr_03_loc_com'] = (df['team1_home_xg90-03_com_xg90'] * df['team1_home_xgpower-03_com_xg90index'] +
+                                df['team2_away_xg90-03_cop_xg90'] * df['team2_away_xgpower-03_cop_xg90index'] +
+                                df['team1_home_xg90-03_com_xga90'] * df['team1_home_xgpower-03_com_xga90index'] +
+                                df['team2_away_xg90-03_cop_xga90'] * df['team2_away_xgpower-03_cop_xga90index'])
+    df['sum_ufr_com'] = (df.team1_all_xg90_com_xg90 * df.team1_all_xgpower_com_xg90index +
+                         df.team2_all_xg90_cop_xg90 * df.team2_all_xgpower_cop_xg90index +
+                         df.team1_all_xg90_com_xga90 * df.team1_all_xgpower_com_xga90index +
+                         df.team2_all_xg90_cop_xga90 * df.team2_all_xgpower_cop_xga90index)
+    df['sum_ufr_loc_com'] = (df.team1_home_xg90_com_xg90 * df.team1_home_xgpower_com_xg90index +
+                             df.team2_away_xg90_cop_xg90 * df.team2_away_xgpower_cop_xg90index +
+                             df.team1_home_xg90_com_xga90 * df.team1_away_xgpower_com_xga90index +
+                             df.team2_home_xg90_cop_xga90 * df.team2_away_xgpower_cop_xga90index)
+    df['paper_H_draw'] = (df.team1_all_xg90_draw_xg90 * df.team2_all_xg90_draw_xga90 *
+                          df.team1_all_xgpower_draw_xg90index) / df.team1_all_xgpower_draw_xg90noindex
+    df['paper_A_draw'] = (df.team2_all_xg90_draw_xg90 * df.team1_all_xg90_draw_xga90 *
+                          df.team2_all_xgpower_draw_xg90index) / df.team2_all_xgpower_draw_xg90noindex
+    df['paper_H_loc_draw'] = (df.team1_home_xg90_draw_xg90 * df.team2_away_xg90_draw_xga90 *
+                              df.team1_home_xgpower_draw_xg90index) / df.team1_home_xgpower_draw_xg90noindex
+    df['paper_A_loc_draw'] = (df.team2_away_xg90_draw_xg90 * df.team1_home_xg90_draw_xga90 *
+                              df.team2_away_xgpower_draw_xg90index) / df.team2_away_xgpower_draw_xg90noindex
+    df['paper_03_H_draw'] = (df['team1_all_xg90-03_draw_xg90'] * df['team2_all_xg90-03_draw_xga90'] *
+                             df['team1_all_xgpower-03_draw_xg90index']) / df['team1_all_xgpower-03_draw_xg90noindex']
+    df['paper_03_A_draw'] = (df['team2_all_xg90-03_draw_xg90'] * df['team1_all_xg90-03_draw_xga90'] *
+                             df['team2_all_xgpower-03_draw_xg90index']) / df['team2_all_xgpower-03_draw_xg90noindex']
+    df['paper_03_H_loc_draw'] = (df['team1_home_xg90-03_draw_xg90'] * df['team2_away_xg90-03_draw_xga90'] *
+                                 df['team1_home_xgpower-03_draw_xg90index']) / df['team1_home_xgpower-03_draw_xg90noindex']
+    df['paper_03_A_loc_draw'] = (df['team2_away_xg90-03_draw_xg90'] * df['team1_home_xg90-03_draw_xga90'] *
+                                 df['team2_away_xgpower-03_draw_xg90index']) / df['team2_away_xgpower-03_draw_xg90noindex']
+    df['paper_total_draw'] = df['paper_H_draw'] + df['paper_A_draw']
+    df['paper_total_loc_draw'] = df['paper_H_loc_draw'] + df['paper_A_loc_draw']
+    df['paper_total_03_draw'] = df['paper_03_H_draw'] + df['paper_03_A_draw']
+    df['paper_total_03_loc_draw'] = df['paper_03_H_loc_draw'] + df['paper_03_A_loc_draw']
+    df['paper_diff_H_A_draw'] = df['paper_H_draw'] - df['paper_A_draw']
+    df['paper_diff_A_H_draw'] = df['paper_A_draw'] - df['paper_H_draw']
+    df['paper_diff_H_A_loc_draw'] = df['paper_H_loc_draw'] - df['paper_A_loc_draw']
+    df['paper_diff_A_H_loc_draw'] = df['paper_A_loc_draw'] - df['paper_H_loc_draw']
+    df['paper_diff_03_H_A_draw'] = df['paper_03_H_draw'] - df['paper_03_A_draw']
+    df['paper_diff_03_A_H_draw'] = df['paper_03_A_draw'] - df['paper_03_H_draw']
+    df['paper_diff_03_H_A_loc_draw'] = df['paper_03_H_loc_draw'] - df['paper_03_A_loc_draw']
+    df['paper_diff_03_A_H_loc_draw'] = df['paper_03_A_loc_draw'] - df['paper_03_H_loc_draw']
+    df['paper_H_zero'] = (df.team1_all_xg90_zero_xg90 * df.team2_all_xg90_zero_xga90 *
+                          df.team1_all_xgpower_zero_xg90index) / df.team1_all_xgpower_zero_xg90noindex
+    df['paper_A_zero'] = (df.team2_all_xg90_zero_xg90 * df.team1_all_xg90_zero_xga90 *
+                          df.team2_all_xgpower_zero_xg90index) / df.team2_all_xgpower_zero_xg90noindex
+    df['paper_H_loc_zero'] = (df.team1_home_xg90_zero_xg90 * df.team2_away_xg90_zero_xga90 *
+                              df.team1_home_xgpower_zero_xg90index) / df.team1_home_xgpower_zero_xg90noindex
+    df['paper_A_loc_zero'] = (df.team2_away_xg90_zero_xg90 * df.team1_home_xg90_zero_xga90 *
+                              df.team2_away_xgpower_zero_xg90index) / df.team2_away_xgpower_zero_xg90noindex
+    df['paper_03_H_zero'] = (df['team1_all_xg90-03_zero_xg90'] * df['team2_all_xg90-03_zero_xga90'] *
+                             df['team1_all_xgpower-03_zero_xg90index']) / df['team1_all_xgpower-03_zero_xg90noindex']
+    df['paper_03_A_zero'] = (df['team2_all_xg90-03_zero_xg90'] * df['team1_all_xg90-03_zero_xga90'] *
+                             df['team2_all_xgpower-03_zero_xg90index']) / df['team2_all_xgpower-03_zero_xg90noindex']
+    df['paper_03_H_loc_zero'] = (df['team1_home_xg90-03_zero_xg90'] * df['team2_away_xg90-03_zero_xga90'] *
+                                 df['team1_home_xgpower-03_zero_xg90index']) / df[
+                                    'team1_home_xgpower-03_zero_xg90noindex']
+    df['paper_03_A_loc_zero'] = (df['team2_away_xg90-03_zero_xg90'] * df['team1_home_xg90-03_zero_xga90'] *
+                                 df['team2_away_xgpower-03_zero_xg90index']) / df[
+                                    'team2_away_xgpower-03_zero_xg90noindex']
+    df['paper_total_zero'] = df['paper_H_zero'] + df['paper_A_zero']
+    df['paper_total_loc_zero'] = df['paper_H_loc_zero'] + df['paper_A_loc_zero']
+    df['paper_total_03_zero'] = df['paper_03_H_zero'] + df['paper_03_A_zero']
+    df['paper_total_03_loc_zero'] = df['paper_03_H_loc_zero'] + df['paper_03_A_loc_zero']
+    df['paper_diff_H_A_zero'] = df['paper_H_zero'] - df['paper_A_zero']
+    df['paper_diff_A_H_zero'] = df['paper_A_zero'] - df['paper_H_zero']
+    df['paper_diff_H_A_loc_zero'] = df['paper_H_loc_zero'] - df['paper_A_loc_zero']
+    df['paper_diff_A_H_loc_zero'] = df['paper_A_loc_zero'] - df['paper_H_loc_zero']
+    df['paper_diff_03_H_A_zero'] = df['paper_03_H_zero'] - df['paper_03_A_zero']
+    df['paper_diff_03_A_H_zero'] = df['paper_03_A_zero'] - df['paper_03_H_zero']
+    df['paper_diff_03_H_A_loc_zero'] = df['paper_03_H_loc_zero'] - df['paper_03_A_loc_zero']
+    df['paper_diff_03_A_H_loc_zero'] = df['paper_03_A_loc_zero'] - df['paper_03_H_loc_zero']
+    df['paper_H_cop'] = (df.team1_all_xg90_cop_xg90 * df.team2_all_xg90_com_xga90 *
+                         df.team1_all_xgpower_cop_xg90index) / df.team1_all_xgpower_cop_xg90noindex
+    df['paper_A_cop'] = (df.team2_all_xg90_com_xg90 * df.team1_all_xg90_cop_xga90 *
+                         df.team2_all_xgpower_com_xg90index) / df.team2_all_xgpower_com_xg90noindex
+    df['paper_H_loc_cop'] = (df.team1_home_xg90_cop_xg90 * df.team2_away_xg90_com_xga90 *
+                             df.team1_home_xgpower_cop_xg90index) / df.team1_home_xgpower_cop_xg90noindex
+    df['paper_A_loc_cop'] = (df.team2_away_xg90_com_xg90 * df.team1_home_xg90_cop_xga90 *
+                             df.team2_away_xgpower_com_xg90index) / df.team2_away_xgpower_com_xg90noindex
+    df['paper_03_H_cop'] = (df['team1_all_xg90-03_cop_xg90'] * df['team2_all_xg90-03_com_xga90'] *
+                            df['team1_all_xgpower-03_cop_xg90index']) / df['team1_all_xgpower-03_cop_xg90noindex']
+    df['paper_03_A_cop'] = (df['team2_all_xg90-03_com_xg90'] * df['team1_all_xg90-03_cop_xga90'] *
+                            df['team2_all_xgpower-03_com_xg90index']) / df['team2_all_xgpower-03_com_xg90noindex']
+    df['paper_03_H_loc_cop'] = (df['team1_home_xg90-03_cop_xg90'] * df['team2_away_xg90-03_com_xga90'] *
+                                df['team1_home_xgpower-03_cop_xg90index']) / df['team1_home_xgpower-03_cop_xg90noindex']
+    df['paper_03_A_loc_cop'] = (df['team2_away_xg90-03_com_xg90'] * df['team1_home_xg90-03_cop_xga90'] *
+                                df['team2_away_xgpower-03_com_xg90index']) / df['team2_away_xgpower-03_com_xg90noindex']
+    df['paper_total_cop'] = df['paper_H_cop'] + df['paper_A_cop']
+    df['paper_total_loc_cop'] = df['paper_H_loc_cop'] + df['paper_A_loc_cop']
+    df['paper_total_03_cop'] = df['paper_03_H_cop'] + df['paper_03_A_cop']
+    df['paper_total_03_loc_cop'] = df['paper_03_H_loc_cop'] + df['paper_03_A_loc_cop']
+    df['paper_diff_H_A_cop'] = df['paper_H_cop'] - df['paper_A_cop']
+    df['paper_diff_A_H_cop'] = df['paper_A_cop'] - df['paper_H_cop']
+    df['paper_diff_H_A_loc_cop'] = df['paper_H_loc_cop'] - df['paper_A_loc_cop']
+    df['paper_diff_A_H_loc_cop'] = df['paper_A_loc_cop'] - df['paper_H_loc_cop']
+    df['paper_diff_03_H_A_cop'] = df['paper_03_H_cop'] - df['paper_03_A_cop']
+    df['paper_diff_03_A_H_cop'] = df['paper_03_A_cop'] - df['paper_03_H_cop']
+    df['paper_diff_03_H_A_loc_cop'] = df['paper_03_H_loc_cop'] - df['paper_03_A_loc_cop']
+    df['paper_diff_03_A_H_loc_cop'] = df['paper_03_A_loc_cop'] - df['paper_03_H_loc_cop']
+    df['paper_H_com'] = (df.team1_all_xg90_com_xg90 * df.team2_all_xg90_cop_xga90 *
+                         df.team1_all_xgpower_com_xg90index) / df.team1_all_xgpower_cop_xg90noindex
+    df['paper_A_com'] = (df.team2_all_xg90_cop_xg90 * df.team1_all_xg90_com_xga90 *
+                         df.team2_all_xgpower_cop_xg90index) / df.team2_all_xgpower_cop_xg90noindex
+    df['paper_H_loc_com'] = (df.team1_home_xg90_com_xg90 * df.team2_away_xg90_cop_xga90 *
+                             df.team1_home_xgpower_com_xg90index) / df.team1_home_xgpower_com_xg90noindex
+    df['paper_A_loc_com'] = (df.team2_away_xg90_cop_xg90 * df.team1_home_xg90_com_xga90 *
+                             df.team2_away_xgpower_cop_xg90index) / df.team2_away_xgpower_cop_xg90noindex
+    df['paper_03_H_com'] = (df['team1_all_xg90-03_com_xg90'] * df['team2_all_xg90-03_cop_xga90'] *
+                            df['team1_all_xgpower-03_com_xg90index']) / df['team1_all_xgpower-03_com_xg90noindex']
+    df['paper_03_A_com'] = (df['team2_all_xg90-03_cop_xg90'] * df['team1_all_xg90-03_com_xga90'] *
+                            df['team2_all_xgpower-03_cop_xg90index']) / df['team2_all_xgpower-03_cop_xg90noindex']
+    df['paper_03_H_loc_com'] = (df['team1_home_xg90-03_com_xg90'] * df['team2_away_xg90-03_cop_xga90'] *
+                                df['team1_home_xgpower-03_com_xg90index']) / df['team1_home_xgpower-03_com_xg90noindex']
+    df['paper_03_A_loc_com'] = (df['team2_away_xg90-03_cop_xg90'] * df['team1_home_xg90-03_com_xga90'] *
+                                df['team2_away_xgpower-03_cop_xg90index']) / df['team2_away_xgpower-03_cop_xg90noindex']
+    df['paper_total_com'] = df['paper_H_com'] + df['paper_A_com']
+    df['paper_total_loc_com'] = df['paper_H_loc_com'] + df['paper_A_loc_com']
+    df['paper_total_03_com'] = df['paper_03_H_com'] + df['paper_03_A_com']
+    df['paper_total_03_loc_com'] = df['paper_03_H_loc_com'] + df['paper_03_A_loc_com']
+    df['paper_diff_H_A_com'] = df['paper_H_com'] - df['paper_A_com']
+    df['paper_diff_A_H_com'] = df['paper_A_com'] - df['paper_H_com']
+    df['paper_diff_H_A_loc_com'] = df['paper_H_loc_com'] - df['paper_A_loc_com']
+    df['paper_diff_A_H_loc_com'] = df['paper_A_loc_com'] - df['paper_H_loc_com']
+    df['paper_diff_03_H_A_com'] = df['paper_03_H_com'] - df['paper_03_A_com']
+    df['paper_diff_03_A_H_com'] = df['paper_03_A_com'] - df['paper_03_H_com']
+    df['paper_diff_03_H_A_loc_com'] = df['paper_03_H_loc_com'] - df['paper_03_A_loc_com']
+    df['paper_diff_03_A_H_loc_com'] = df['paper_03_A_loc_com'] - df['paper_03_H_loc_com']
 
 
 def print_result(df: DataFrame, profit_open_column, profit_close_column, udi_column):

@@ -35,6 +35,7 @@ def filter_games(df: DataFrame) -> DataFrame:
             'id',
             'date_match',
             'country_name',
+            'league_name',
             'team_1_name',
             'team_2_name',
             'bet_type',
